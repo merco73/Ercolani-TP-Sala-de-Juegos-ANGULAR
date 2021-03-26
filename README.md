@@ -1,3 +1,3 @@
-# AppAngular
+# TP Sala de juegos Angular - Mario Matias Ercolani 
 
-link Heroku: https://app-angular-ercolani.herokuapp.com/
+link Heroku: https://ercolani-tp-sala-de-juegos.herokuapp.com/
