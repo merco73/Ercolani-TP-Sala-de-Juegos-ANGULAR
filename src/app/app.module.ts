@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
+import { NavbarMenuComponent } from './componentes/navbar-menu/navbar-menu.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    QuienSoyComponent
+    QuienSoyComponent,
+    NavbarMenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
