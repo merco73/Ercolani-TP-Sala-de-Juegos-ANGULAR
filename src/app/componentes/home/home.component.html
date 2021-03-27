@@ -1,2 +1,40 @@
 <app-navbar-menu></app-navbar-menu>
+<main role="main">
+
+
+    <section class="jumbotron text-center shadow-lg p-3 mb-5 bg-white rounded" id="neon">
+      <div class="container text-warning">
+        <h1 class="jumbotron-heading">Bienvenidos a MINIJUEGOS</h1>
+        <p class="lead text-secondary">Somos una comunidad de jugadores cuyos miembros son mayormente de países
+          americanos de
+          habla hispana como Argentina, Chile, Uruguay, Venezuela, Colombia, México, Ecuador, Costa Rica, Puerto Rico,
+          Perú, Panamá y un largo Etc.</p>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light">
+      <div class="container ">
+  
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let menu of mPrincipal">
+            <div class="card mb-4 box-shadow ">
+              <img class="card-img-top" src="{{ menu.img }}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ menu.nombre }}</h5>
+                <div class=" d-md-block">
+                  <p class="card-text block-ellipsis">{{ menu.descripcion }}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" routerLink="{{menu.link}}" class="btn btn-block btn-warning">
+                    Ver más...
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
 <app-footer></app-footer>

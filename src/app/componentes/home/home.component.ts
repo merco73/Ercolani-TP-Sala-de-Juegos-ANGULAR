@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Principal,MenuHomeService } from 'src/app/servicios/menu-home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public status: any = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
 
-  ngOnInit(): void {
+  mPrincipal: Principal[] = [];
+
+  constructor(private _menuPrincipal: MenuHomeService) { }
+
+  ngOnInit() {
+    this.mPrincipal = this._menuPrincipal.getMenuPrincipal();
+
+    console.log(this.mPrincipal);
   }
-
 }
