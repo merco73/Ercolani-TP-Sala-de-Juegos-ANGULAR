@@ -6,7 +6,7 @@ import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 
 const routes: Routes = [
   { path:'home', component: HomeComponent },
-  // { path:'**', pathMatch:'full', redirectTo:'home' },
+  { path:'', pathMatch:'full', redirectTo:'home' },
   { path:'login', component: LoginComponent },
   { path:'quien-soy', component: QuienSoyComponent }
 ];
