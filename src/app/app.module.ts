@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,10 @@ import { HomeComponent } from './componentes/home/home.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { NavbarMenuComponent } from './componentes/navbar-menu/navbar-menu.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { from } from 'rxjs';
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +22,16 @@ import { FooterComponent } from './componentes/footer/footer.component';
     HomeComponent,
     QuienSoyComponent,
     NavbarMenuComponent,
-    FooterComponent
+    FooterComponent,
+    RegistroComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

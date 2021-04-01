@@ -5,23 +5,27 @@
       <!-- Icon -->
       <div class="fadeIn first">
         <img src="./assets/imagenes/user.png" id="icon" alt="User Icon" /><br>
-        Iniciar Sesión
+        Registro
       </div>
   
       <!-- Login Form -->
-      <form (ngSubmit)="login( f )"
+      <form (ngSubmit)="onSubmit( f )"
       #f="ngForm">
+        <br>
+        <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">*El nombre es obligatorio</span>
+        <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="Nombre" [(ngModel)]="usuario.nombre" required minlength="2">
+        <br>
         <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">*El correo es obligatorio</span>
         <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" [(ngModel)]="usuario.email" required email minlength="3">
         <br>
         <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">*Al menos 6 caracteres</span>
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" [(ngModel)]="usuario.password" required minlength="6">
-        <input type="submit" class="fadeIn fourth" value="Ingresar">
+        <input type="submit" class="fadeIn fourth" value="Registrarse">
       </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        ¿No tenes una cuenta? <a class="underlineHover" routerLink="/registro">Crear una cuenta</a>
+        Si ya tenes cuenta <a class="underlineHover" routerLink="/login">Inicia Sesión</a>
       </div>
   
     </div>
