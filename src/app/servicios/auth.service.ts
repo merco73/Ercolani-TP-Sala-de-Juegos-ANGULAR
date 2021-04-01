@@ -26,7 +26,7 @@ constructor(private http: HttpClient) {
   }
 
   logout(){
-
+    localStorage.removeItem('token');
   }
 
 
@@ -92,6 +92,27 @@ nuevoUsuario(usuario: UsuarioModel) {
     }
     return this.userToken;
   }
+
+
+//* Autenticado
+estaAutenticado():boolean{
+  return this.userToken.length>2;
+
+      /*    if (this.userToken.length > 2) {
+      return false;
+    }
+
+    const expira = Number(localStorage.getItem("expira"));
+    const expiraDate = new Date();
+    expiraDate.setTime(expira);
+
+    if (expiraDate > new Date()) {
+      return true;
+    } else {
+      return false;
+    }*/
+
+}
 
 
 }
