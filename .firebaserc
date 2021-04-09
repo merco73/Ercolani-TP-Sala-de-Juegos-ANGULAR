@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tpsaladejuegos-86390": {
+      "hosting": {
+        "appAngular": [
+          "tpsaladejuegos-86390"
+        ]
+      }
+    }
+  }
+}

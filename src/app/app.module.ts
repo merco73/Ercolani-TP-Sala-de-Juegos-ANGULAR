@@ -14,6 +14,14 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { from } from 'rxjs';
 
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+import { environment } from '../environments/environment';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +38,10 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
     
   ],
   providers: [],
