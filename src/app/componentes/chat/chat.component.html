@@ -1,0 +1,35 @@
+<div class="container main-container">
+
+  <div class="chat-window">
+    <h1>Chat</h1>
+
+    <hr>
+  
+    <div class="app-mensajes" id="app-mensajes">
+  
+        <div class="text-right">
+          <span class="badge badge-primary">Matias</span>
+          <p>
+            Este es un msj
+          </p>
+        </div>
+    </div>
+
+
+    <input  type="text" name="mensaje" 
+            [(ngModel)]="mensaje" 
+            class="form-control"
+            (keyup.enter)="enviar_mensaje()"
+            placeholder="Enviar mensaje">
+
+  </div>
+
+
+</div>
+
+<!-- Prueba de conexion -->
+<!-- <ul>
+    <li class="text" *ngFor="let chat of chats | async">
+      {{chat.mensaje}}
+    </li>
+  </ul> -->
