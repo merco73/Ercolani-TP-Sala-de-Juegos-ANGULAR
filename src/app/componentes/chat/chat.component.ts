@@ -1,7 +1,9 @@
+import { resolve } from '@angular/compiler-cli/src/ngtsc/file_system';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from, Observable } from 'rxjs';
 import {ChatService} from "../../servicios/chat.service";
+
 
 
 @Component({
@@ -12,15 +14,14 @@ import {ChatService} from "../../servicios/chat.service";
 export class ChatComponent implements OnInit {
 
   mensaje:string = "";
+  elemento:any;
 
   constructor(public _cs:ChatService){
     
     this._cs.cargarMensajes()
-            .subscribe((mensajes:any[])=>{
-
-              console.log(mensajes);
-
-            })
+            .subscribe(()=>{
+              this.elemento.scrollTop = this.elemento.scrollHeight;
+            });
   }
 
   //! Prueba de Conexion Firebase
@@ -30,11 +31,28 @@ export class ChatComponent implements OnInit {
   // }
   
   ngOnInit(): void {
+
+    setTimeout(()=>{
+      this.elemento = document.getElementById('app-mensajes');
+    },20)
   }
 
 
   enviar_mensaje(){
     console.log(this.mensaje);
+
+    if(this.mensaje.length ===0){
+      return;
+    }
+
+    this._cs.agregarMensaje(this.mensaje);
+    
+    if (localStorage.getItem("email")) {
+      console.log(localStorage.getItem("email"));
+    }
+
+    this.mensaje='';
+           
   }
 
 }
