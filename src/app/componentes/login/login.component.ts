@@ -13,27 +13,46 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
+
   usuario:UsuarioModel = new UsuarioModel();
   recordarme = false;
   
 
-  constructor(private auth: AuthService,
+
+
+constructor(private auth: AuthService,
               private router: Router) { }
+
+
+
 
   ngOnInit(): void {
 
-    if(localStorage.getItem('email')){
-      this.usuario.email = localStorage.getItem('email');
-      this.recordarme = true;
-    }
+  //   if(localStorage.getItem('email')){
+  //     this.usuario.email = localStorage.getItem('email');
+  //     this.recordarme = true;
+  //   }
 
-    console.log(this.usuario.email);
+  //   console.log(this.usuario.email);
+  // }
+
+
+  if(this.recordarme){
+    this.usuario.email = localStorage.getItem('email');
+    this.recordarme = true;
   }
 
-  login(form: NgForm){
-    if(form.invalid){return;}
+  console.log(this.usuario.email);
+}
 
-//* Sweetalert
+
+
+
+login(form: NgForm){
+
+  if(form.invalid){return;}
+
+    //* Sweetalert
     Swal.fire({  
       allowOutsideClick: false, 
       icon: 'info', 
@@ -45,12 +64,14 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.usuario).subscribe(resp=>{
       
       console.log(resp);
+      console.log(this.usuario.email);
       Swal.close();
 
-      if(this.recordarme){
-        localStorage.setItem('email', this.usuario.email);
-        
-      }
+         if(this.recordarme){
+           localStorage.setItem('email', this.usuario.email);
+         }
+
+          localStorage.setItem('email', this.usuario.email);
 
       this.router.navigateByUrl('/home');
 

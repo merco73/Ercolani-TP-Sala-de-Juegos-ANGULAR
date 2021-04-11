@@ -16,13 +16,16 @@ export class ChatComponent implements OnInit {
   mensaje:string = "";
   elemento:any;
 
+
   constructor(public _cs:ChatService){
+    console.log(this._cs.nombreUser);
     
     this._cs.cargarMensajes()
             .subscribe(()=>{
-              this.elemento.scrollTop = this.elemento.scrollHeight;
+              this.elemento.scrollTop = this.elemento.scrollHeight; 
             });
   }
+
 
   //! Prueba de Conexion Firebase
   // public chats: Observable<any[]>;
@@ -38,7 +41,12 @@ export class ChatComponent implements OnInit {
   }
 
 
+
+
+
+
   enviar_mensaje(){
+
     console.log(this.mensaje);
 
     if(this.mensaje.length ===0){
@@ -46,10 +54,6 @@ export class ChatComponent implements OnInit {
     }
 
     this._cs.agregarMensaje(this.mensaje);
-    
-    if (localStorage.getItem("email")) {
-      console.log(localStorage.getItem("email"));
-    }
 
     this.mensaje='';
            

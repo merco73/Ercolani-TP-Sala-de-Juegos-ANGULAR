@@ -16,11 +16,13 @@ export class ChatService {
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
 
   public chats: Mensaje[] = [];
+
+  public nombreUser = localStorage.getItem('email');
   
-  // public usuario:any={};
 
 
-  constructor(private afs: AngularFirestore) {
+
+  constructor(public afs: AngularFirestore) {
               // public afsAuth:AngularFireAuth
 
                 // this.afsAuth.authState.subscribe(user =>{
@@ -42,6 +44,7 @@ export class ChatService {
 
     return this.itemsCollection.valueChanges().pipe(
       map( (mensajes: Mensaje[] ) => {
+
         console.log(mensajes);
 
         this.chats=[];
@@ -50,19 +53,21 @@ export class ChatService {
           this.chats.unshift(mensaje);
         }
 
+        console.log(this.chats);
         return this.chats;
         // this.chats = mensajes;
       }))
 
   }
 
+  
 
 
   agregarMensaje(texto:string){
 
     // Falta el UID del usuario
     let mensaje: Mensaje ={
-      nombre:'Demo',
+      nombre:this.nombreUser,
       mensaje:texto,
       fecha:new Date().getTime()
     }

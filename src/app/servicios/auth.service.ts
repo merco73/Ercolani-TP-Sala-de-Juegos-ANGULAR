@@ -14,6 +14,7 @@ export class AuthService {
 
   userToken: any;
 
+
 //*Crear nuevo Usuario 
   // https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 
@@ -27,6 +28,7 @@ constructor(private http: HttpClient) {
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
   }
 
 
@@ -63,7 +65,7 @@ nuevoUsuario(usuario: UsuarioModel) {
 
     .pipe(
       map(resp => {
-        // console.log("Entro en el mapa del RXJS");
+         console.log("Entro en el mapa del RXJS");
         this.guardarToken( resp['idToken'] );
         return resp;
       })

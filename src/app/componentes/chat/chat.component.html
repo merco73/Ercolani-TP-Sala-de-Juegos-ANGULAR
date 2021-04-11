@@ -1,15 +1,17 @@
+<div class="principal">
 <div class="container main-container">
 
   <div class="chat-window">
-    <h1>Chat</h1>
+    <h2>Sala Chat</h2>
 
     <hr>
   
     <div class="app-mensajes" id="app-mensajes">
 
-      <div class="text-right" *ngFor='let chat of _cs.chats'>
-        <span class="badge badge-primary">Matias</span>
-        <p>
+      <div *ngFor='let chat of _cs.chats'
+            [ngClass]="{'text-right':_cs.nombreUser == chat.nombre}">
+        <span class="badge" [ngClass]="{'badge-primary':_cs.nombreUser == chat.nombre, 'badge-success':_cs.nombreUser != chat.nombre}">{{chat.nombre}}</span> <br>
+        <p class="badge badge-pill badge-light">
           {{chat.mensaje}}
         </p>
       </div>
@@ -25,7 +27,7 @@
     </div>
 
 
-    <input  type="text" name="mensaje" 
+    <input  type="text" name="mensaje" autocomplete="off"
             [(ngModel)]="mensaje" 
             class="form-control"
             (keyup.enter)="enviar_mensaje()"
@@ -33,6 +35,8 @@
 
   </div>
 
+
+</div>
 
 </div>
 
