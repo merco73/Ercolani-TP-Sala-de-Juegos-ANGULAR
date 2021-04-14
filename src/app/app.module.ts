@@ -15,7 +15,10 @@ import { NavbarMenuComponent } from './componentes/navbar-menu/navbar-menu.compo
 import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ChatComponent } from './componentes/chat/chat.component';
-import { from } from 'rxjs';
+// Sala juegos
+import { SalaJuegosComponent } from './componentes/juegos/sala-juegos/sala-juegos.component';
+import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
+import { PptComponent } from './componentes/juegos/ppt/ppt.component';
 
 // Angular Fire para chat
 import { AngularFireModule } from '@angular/fire';
@@ -33,6 +36,7 @@ import { ChatService } from './servicios/chat.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,10 @@ import { ChatService } from './servicios/chat.service';
     FooterComponent,
     RegistroComponent,
     ChatComponent,
+    // Sala juegos
+    SalaJuegosComponent,
+    TatetiComponent,
+    PptComponent,
 
   ],
   imports: [

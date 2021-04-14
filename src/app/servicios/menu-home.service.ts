@@ -11,7 +11,7 @@ export class MenuHomeService {
       nombre: "Juegos",
       descripcion:
         "Accede a los mejores juegos.",
-      link: "/Juegos"
+      link: "/sala-juegos"
     },
     {
       img: "./assets/imagenes/listado.png",

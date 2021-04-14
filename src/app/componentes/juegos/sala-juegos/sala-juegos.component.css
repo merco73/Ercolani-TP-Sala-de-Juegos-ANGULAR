@@ -1,0 +1,28 @@
+.jumbotron {
+    padding: 4rem 2rem;
+    margin-bottom: 0rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+
+        background-color: #000;
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../../assets/imagenes/mountain.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+}
+
+h1{
+    color: whitesmoke;
+}
+
+.juegos{
+    margin-top: 1%; 
+    margin-bottom: 1%; 
+}
+
+.parrafo{
+    color: rgb(174, 174, 174);
+}   
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
