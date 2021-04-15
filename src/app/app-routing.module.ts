@@ -7,6 +7,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { AuthGuard } from './guards/auth.guard';
 // Sala juegos
 import { SalaJuegosComponent } from './componentes/juegos/sala-juegos/sala-juegos.component';
+import { PptComponent } from './componentes/juegos/ppt/ppt.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path:'registro', component: RegistroComponent },
   // Sala Juegos
   { path:'sala-juegos', component: SalaJuegosComponent, canActivate:[AuthGuard]},
+  { path:'ppt', component: PptComponent, canActivate:[AuthGuard]},
   { path:'**', redirectTo:'home' }
 ];
 

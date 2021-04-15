@@ -21,3 +21,29 @@ Sirve para poner 3 puntos automaticamente...
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+
+  /* boton cielo */
+.btn-cielo {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  line-height: 55px;
+  bottom: 30px;
+  right: 32px;
+  background: transparent;
+  z-index: 10;
+  color: #6c757d   ;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, .3);
+  opacity: 0.8;
+}
+
+.btn-cielo:hover{
+  text-decoration: none;
+  color: #64b161;
+  background: white;
+  opacity: 0.98;
+}

@@ -5,7 +5,7 @@
     border-radius: .3rem;
 
         background-color: #000;
-        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../../assets/imagenes/mountain.jpg");
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../../assets/imagenes/mario.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50% 50%;
@@ -13,7 +13,7 @@
 }
 
 h1{
-    color: whitesmoke;
+    color: #ffc107;
 }
 
 .juegos{

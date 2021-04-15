@@ -2,6 +2,11 @@
     width: 80px;
     height: 70px;
   }
+
+  .jumbotron-heading{
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
   
   .hero-text {
     text-align: center;
@@ -15,7 +20,14 @@
   #neon {
     /* Full height */
 
-    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    /* background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100)); */
+
+    background-color: #000;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/imagenes/mario.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    
   
     /* Center and scale the image nicely 
     background-image: url('./assets/imagenes/neon.jpg');

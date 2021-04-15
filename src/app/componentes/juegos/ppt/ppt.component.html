@@ -1,1 +1,64 @@
-<p>ppt works!</p>
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Piedra Papel o Tijera</h1>
+        <p class="parrafo"></p>
+        <p>
+          
+          <a routerLink="/sala-juegos" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container juegos">
+
+
+        <!-- PPT -->
+        <div class="container-ppt">
+
+            <div id="resultado">
+                <p>Machine (CPU)</p>
+                <img class="imgMachine" src="{{imgMachine}}">
+                <hr  />
+                <p>Usuario</p>
+                <img class="imgMachine" src="{{imgUser}}">
+                <hr  />
+            </div>
+
+            
+            
+            <div class="texto-comenzar">
+                
+                Elegi Piedra Papel o Tijera
+            </div>
+
+            <div id="group-btn">
+                <button (click)='jugar(0)'>
+                    <img src="../../../../assets/imagenes/piedra.jpeg">
+                </button>
+                <button (click)='jugar(1)'>
+                    <img src="../../../../assets/imagenes/papel.jpeg">
+                </button>
+                <button (click)='jugar(2)'>
+                    <img src="../../../../assets/imagenes/tijera.jpeg">
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+      </div>
+    
+
+  </main>
+
+
+
+
+<app-footer></app-footer>
