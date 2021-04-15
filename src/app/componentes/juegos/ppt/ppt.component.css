@@ -16,6 +16,10 @@ h1{
     color: #ffc107;
 }
 
+h2{
+    text-align: center;
+}
+
 .juegos{
     margin-top: 1%; 
     margin-bottom: 1%; 

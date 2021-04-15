@@ -14,11 +14,14 @@ export class PptComponent implements OnInit {
  imgMachine:string = '../../../../assets/imagenes/piedra.jpeg';
  imgUser:string = '../../../../assets/imagenes/piedra.jpeg';
 
+//  resultados
+  resultado:string = 'Resultado...';
+
   jugar(ppt:number){ 
 
 
     let maquina = Math.floor(Math.random()*3)
-    console.log(maquina);
+    // console.log(maquina);
 
     
 
@@ -65,62 +68,54 @@ export class PptComponent implements OnInit {
 
 
 
-    setTimeout(function(){
 
-      
 
     if(ppt == maquina){
 
-      console.log('empate');
+      this.resultado = 'Empate :|';
 
     //* Si el usuario elige piedra
     } else if(ppt == 0){
 
-      console.log('(Usuario) Piedra');
-
       if(maquina == 1){
 
-        console.log('(Maquina) Papel: Perdiste');
+        this.resultado = 'Perdiste :(';
 
       }else if(maquina == 2){
 
-        console.log('(Maquina) Tijera: Ganaste');
+         this.resultado = 'Ganaste :)';
 
       }
 
     //* Si el usuario elige papel
     } else if(ppt == 1){
 
-      console.log('(Usuario) Papel');
-
       if(maquina == 0){
 
-        console.log('(Maquina) Piedra: Ganaste');
+        this.resultado = 'Ganaste :)';
 
       }else if(maquina == 2){
 
-        console.log('(Maquina) Tijera: Perdiste');
+        this.resultado = 'Perdiste :(';
 
       }
 
     //* Si el usuario elige tijera
     } else if(ppt == 2){
 
-      console.log('(Usuario) Tijera');
-
       if(maquina == 0){
 
-        console.log('(Maquina) Piedra: Perdiste');
+        this.resultado = 'Perdiste :(';
 
       }else if(maquina == 1){
 
-        console.log('(Maquina) Papel: Ganaste');
+        this.resultado = 'Ganaste :)';
 
       }
 
     }
 
-  }, 3000);
+  
 
   }
 
