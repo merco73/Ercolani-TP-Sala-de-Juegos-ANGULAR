@@ -1,1 +1,37 @@
-<p>tateti works!</p>
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Ta Te Ti</h1>
+        <p class="parrafo"> es un juego simple, normalmente jugado con papel y lápiz en el que dos jugadores, uno con un símbolo X y el otro O deben conseguir colocar su ficha en línea en un tablero de 3×3, dicha línea puede ser horizontal, vertical o diagonal.</p>
+        <p>
+          <a routerLink="/sala-juegos" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <h3 *ngIf="!gameOver">Turno: {{ currentPlayer.name }}</h3>
+      <h3 *ngIf="gameOver && lastWinner == PLAYER_HUMAN">Ganaste! :)</h3>
+      <h3 *ngIf="gameOver && lastWinner == PLAYER_COMPUTER">Perdiste! :(</h3>
+      <h3 *ngIf="gameOver && lastWinner == DRAW">Empate! :|</h3>
+      <div id="board" [class.locked]="boardLocked || gameOver">
+          <div *ngFor="let square of board" class="square" [class.checked]="square.value != ''" [class.winner]="square.winner && lastWinner == PLAYER_HUMAN"
+              [class.looser]="square.winner && lastWinner == PLAYER_COMPUTER" (click)="square_click(this.square)">
+              {{ square.value }}
+          </div>
+      </div>
+      <button class="btn btn-dark text-uppercase mb-2 rounded-pill shadow-sm botones" *ngIf="gameOver" (click)="newGame()">Jugar de nuevo</button>
+      <h4>Usuario {{scoreHuman}} - Machine {{scoreComputer}}</h4>
+  </div>
+
+  </main>
+
+<app-chat></app-chat>
+
+
+<app-footer></app-footer>

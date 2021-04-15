@@ -23,8 +23,6 @@ export class PptComponent implements OnInit {
     let maquina = Math.floor(Math.random()*3)
     // console.log(maquina);
 
-    
-
 
     switch (ppt) {
       case 0:
