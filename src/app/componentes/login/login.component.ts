@@ -46,6 +46,15 @@ constructor(private auth: AuthService,
 }
 
 
+accesoRapido(){
+  this.usuario.email = 'prueba1@mail.com';
+  this.usuario.password = '123456';
+}
+
+accesoRapido2(){
+  this.usuario.email = 'mrrobot@mail.com';
+  this.usuario.password = '123456';
+}
 
 
 login(form: NgForm){
