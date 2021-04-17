@@ -11,14 +11,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { NavbarMenuComponent } from './componentes/navbar-menu/navbar-menu.component';
-import { FooterComponent } from './componentes/footer/footer.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import { ChatComponent } from './componentes/chat/chat.component';
-// Sala juegos
-import { SalaJuegosComponent } from './componentes/juegos/sala-juegos/sala-juegos.component';
-import { TatetiComponent } from './componentes/juegos/tateti/tateti.component';
-import { PptComponent } from './componentes/juegos/ppt/ppt.component';
+
 
 // Angular Fire para chat
 import { AngularFireModule } from '@angular/fire';
@@ -32,6 +26,11 @@ import { environment } from '../environments/environment';
 // Servicios
 import { ChatService } from './servicios/chat.service';
 
+// Modulos Compartidos
+import { NavbarMenuModule } from './componentes/navbar-menu/navbar-menu.module';
+import { FooterModule } from './componentes/footer/footer.module';
+import { ChatModule } from './componentes/chat/chat.module';
+
 
 
 
@@ -43,15 +42,7 @@ import { ChatService } from './servicios/chat.service';
     LoginComponent,
     HomeComponent,
     QuienSoyComponent,
-    NavbarMenuComponent,
-    FooterComponent,
     RegistroComponent,
-    ChatComponent,
-    // Sala juegos
-    SalaJuegosComponent,
-    TatetiComponent,
-    PptComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -60,8 +51,11 @@ import { ChatService } from './servicios/chat.service';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
-    
+    AngularFireAuthModule,
+    // Componentes Modulizados
+    NavbarMenuModule,
+    FooterModule,
+    ChatModule,
   ],
   providers: [
     ChatService
