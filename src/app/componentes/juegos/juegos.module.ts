@@ -10,13 +10,15 @@ import { TatetiComponent } from './tateti/tateti.component';
 import { NavbarMenuModule } from '../navbar-menu/navbar-menu.module';
 import { FooterModule } from '../footer/footer.module';
 import { ChatModule } from '../chat/chat.module';
+import { MiJuegoComponent } from './mi-juego/mi-juego.component';
 
 
 @NgModule({
   declarations: [
     PptComponent,
     SalaJuegosComponent,
-    TatetiComponent
+    TatetiComponent,
+    MiJuegoComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,36 @@
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Atrapa <a href=""></a> la rata</h1>
+        <p class="parrafo"> es un juego simple, debes atrapar a la rata almenos 10 veces en un minuto</p>
+        <p>
+          <a routerLink="juegos/sala-juegos" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="pointer">
+      <span>Puntos: <b>{{puntos}}/5</b></span>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span> Tiempo: {{tiempo}}</span>
+  
+    </div>
+    <div class="contenedor">
+      <div *ngIf='cartelResultado' class="resultado">
+        <span><b>{{resultado}}</b></span>
+      </div>
+        <div id="player" [ngStyle]="{'margin-top': randNum + 'px', 'margin-left': randNum2 + 'px'} " (click)="sumarPuntos()"></div>
+    </div>
+    <div class="botones">
+      <button class="juegoNuevo" (click)='juegoNuevo()' class="btn btn-sm btn-outline-secondary">Jugar de nuevo</button>
+    </div>
+  </main>
+
+<app-chat></app-chat>
+
+
+<app-footer></app-footer>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MiJuegoComponent } from './mi-juego/mi-juego.component';
 import { PptComponent } from './ppt/ppt.component';
 import { SalaJuegosComponent } from './sala-juegos/sala-juegos.component';
 import { TatetiComponent } from './tateti/tateti.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
      {path:'sala-juegos', component: SalaJuegosComponent},
      {path:'ppt', component: PptComponent},
      {path:'tateti', component: TatetiComponent},
-     {path:'**', redirectTo:'sala-juegos'},
+     {path:'mi-juego', component: MiJuegoComponent},
+     {path:'**', redirectTo:'sala-juegos'}
     ]
    }
  ];
