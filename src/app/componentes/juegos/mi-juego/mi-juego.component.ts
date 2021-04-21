@@ -16,7 +16,7 @@ export class MiJuegoComponent implements OnInit {
 
 
   interval = setInterval(() => {
-    if(this.tiempo > 0 && this.puntos < 5){
+    if(this.tiempo > 0 && this.puntos < 14){
       this.restarTiempo();
     }
   },1000);
@@ -24,14 +24,14 @@ export class MiJuegoComponent implements OnInit {
 // Reiniciar juego
   juegoNuevo(){
     this.puntos = 0;
-    this.tiempo = 15;
+    this.tiempo = 14;
     this.resultado = "En juego...";
     this.cartelResultado = false;
     this.interval;
   }
 
   sumarPuntos() {
-    if(this.puntos<5 && this.tiempo > 0){
+    if(this.puntos<14 && this.tiempo > 0){
       this.puntos++;
 
       if (window.matchMedia("(min-width: 400px)").matches) {
@@ -44,10 +44,10 @@ export class MiJuegoComponent implements OnInit {
         this.randNum2 = Math.round(Math.random()*300);
       }
 
-      if(this.puntos == 5){
+      if(this.puntos == 14){
         // clearInterval(this.interval);
         this.resultado = "GANASTE!";
-        this.puntos = 5;
+        this.puntos = 14;
         this.cartelResultado = true;
       }
     }

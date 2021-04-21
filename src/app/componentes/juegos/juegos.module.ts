@@ -11,6 +11,7 @@ import { NavbarMenuModule } from '../navbar-menu/navbar-menu.module';
 import { FooterModule } from '../footer/footer.module';
 import { ChatModule } from '../chat/chat.module';
 import { MiJuegoComponent } from './mi-juego/mi-juego.component';
+import { MemotestComponent } from './memotest/memotest.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MiJuegoComponent } from './mi-juego/mi-juego.component';
     PptComponent,
     SalaJuegosComponent,
     TatetiComponent,
-    MiJuegoComponent
+    MiJuegoComponent,
+    MemotestComponent
   ],
   imports: [
     CommonModule,

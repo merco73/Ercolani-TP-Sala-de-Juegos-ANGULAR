@@ -1,0 +1,42 @@
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Memotest</h1>
+        <p class="parrafo"> El Memotest es un juego maravilloso que no sólo permite al niño desarrollar su memoria, orientarse en el espacio, el reconocimiento visual, entre otros, sino que además facilita la incorporación de conocimientos y saberes de la cultura general de manera lúdica. </p>
+        <p>
+          <a routerLink="juegos/sala-juegos" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="pointer">
+        <span>Puntos: <b>3/3</b></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span> Tiempo: 13</span>
+    
+      </div>
+      <div class="contenedor">
+        <!-- <div class="resultado">
+          <span><b></b></span>
+        </div> -->
+          <div class="cont-imgs">{{arrayImg[1].id}}</div>
+          <div class="cont-imgs"></div>
+          <div class="cont-imgs"></div>
+          <div class="cont-imgs"></div>
+          <div class="cont-imgs"></div>
+          <div class="cont-imgs"></div>
+      </div>
+      <div class="botones">
+        <button class="juegoNuevo" class="btn btn-sm btn-outline-secondary">Jugar de nuevo</button>
+      </div>
+
+  </main>
+
+<app-chat></app-chat>
+
+
+<app-footer></app-footer>
