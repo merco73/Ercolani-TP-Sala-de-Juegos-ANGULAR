@@ -27,7 +27,7 @@ import { MemotestComponent } from './memotest/memotest.component';
     JuegosRoutingModule,
     NavbarMenuModule,
     FooterModule,
-    ChatModule,
+    ChatModule
   ]
 })
 export class JuegosModule { }

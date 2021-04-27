@@ -15,23 +15,16 @@
     </section>
 
     <div class="pointer">
-        <span>Puntos: <b>3/3</b></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span> Tiempo: 13</span>
+      <span><b>Resultados: {{resultado}}</b></span>
     
       </div>
       <div class="contenedor">
-        <!-- <div class="resultado">
-          <span><b></b></span>
-        </div> -->
-          <div class="cont-imgs">{{arrayImg[1].id}}</div>
-          <div class="cont-imgs"></div>
-          <div class="cont-imgs"></div>
-          <div class="cont-imgs"></div>
-          <div class="cont-imgs"></div>
-          <div class="cont-imgs"></div>
+        <div class="cont-imgs" *ngFor="let item of card; let i = index" >
+          <img class="imgsup" (click)="seleccion($event)" src="{{imgMarvel}}" id="{{i}}">
+        </div>
       </div>
       <div class="botones">
-        <button class="juegoNuevo" class="btn btn-sm btn-outline-secondary">Jugar de nuevo</button>
+        <button class="juegoNuevo" (click)='inicio()' class="btn btn-sm btn-outline-secondary">Jugar de nuevo</button>
       </div>
 
   </main>
