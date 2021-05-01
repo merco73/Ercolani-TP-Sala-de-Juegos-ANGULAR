@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+  import { ListadoService } from 'src/app/servicios/listado.service';
+
 
 @Component({
   selector: 'app-mi-juego',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mi-juego.component.css']
 })
 export class MiJuegoComponent implements OnInit {
+
+  constructor(public firebaseService: ListadoService) {}
 
   puntos:number = 0;
   randNum:number;
@@ -49,6 +53,7 @@ export class MiJuegoComponent implements OnInit {
         this.resultado = "GANASTE!";
         this.puntos = 14;
         this.cartelResultado = true;
+        this.loadResult();
       }
     }
   }
@@ -59,13 +64,17 @@ export class MiJuegoComponent implements OnInit {
     if(this.tiempo == 0){
       this.resultado = "GAME OVER";
       this.cartelResultado = true;
+      this.loadResult();
     }
   }
 
 
-
-  constructor() {
-   }
+  loadResult() {
+    this.firebaseService.addResult('Atrapa al Raton', this.puntos, (this.puntos == 14))
+      .then(result => {
+        console.log("insert result");
+      });
+  }
 
   ngOnInit(): void {
   }

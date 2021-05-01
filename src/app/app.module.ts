@@ -49,6 +49,7 @@ import { ChatModule } from './componentes/chat/chat.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    // Firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

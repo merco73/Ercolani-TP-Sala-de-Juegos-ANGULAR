@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ListadoService } from 'src/app/servicios/listado.service';
 
-import { Observable } from 'rxjs';
+// Servicio Api
 import { MarvelService } from 'src/app/servicios/marvel.service';
-import { createImportSpecifier } from 'typescript';
+
 
 @Component({
   selector: 'app-memotest',
@@ -13,7 +14,7 @@ export class MemotestComponent implements OnInit {
 
 
 // Llamada a la api
-  constructor(private characterSvc: MarvelService) {
+  constructor(private characterSvc: MarvelService, public firebaseService: ListadoService) {
 
     this.characterSvc.getJson('https://gateway.marvel.com:443/v1/public/characters?apikey=da30b7f8cb45c6e9718ed4516df2bddc').subscribe((res:any)=>{
       // console.log(res.data.results[0]);
@@ -44,9 +45,12 @@ export class MemotestComponent implements OnInit {
   won:number = 0;
   resultado:string="...";
 
+  loadBand:boolean = true;
+
 
 
   inicio(){
+    this.loadBand = false;
     this.won = 0;
     this.resultado="...";
 
@@ -147,10 +151,20 @@ export class MemotestComponent implements OnInit {
     this.won++;
     if(this.won == this.needWon){
       this.resultado = 'GANASTE!';
+      this.loadResult();
     }
    }
 
  }
+
+
+
+ loadResult() {
+  this.firebaseService.addResult('Memotest Marvel', this.won, (this.won == this.needWon))
+    .then(result => {
+      console.log("insert result");
+    });
+}
 
 
 
@@ -162,9 +176,10 @@ export class MemotestComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     setTimeout(() => {
       this.inicio();
-     }, 1500);
+     }, 10000);
 
   }
 

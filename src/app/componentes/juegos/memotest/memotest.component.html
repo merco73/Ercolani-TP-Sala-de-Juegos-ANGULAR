@@ -19,6 +19,14 @@
     
       </div>
       <div class="contenedor">
+        
+        <div *ngIf="loadBand == true" class="text-center loadBandClass">
+          <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading..</span>
+          </div><br>
+          <span><b>Cargando...</b></span>
+        </div>
+
         <div class="cont-imgs" *ngFor="let item of card; let i = index" >
           <img class="imgsup" (click)="seleccion($event)" src="{{imgMarvel}}" id="{{i}}">
         </div>

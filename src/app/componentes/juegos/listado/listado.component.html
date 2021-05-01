@@ -1,0 +1,72 @@
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Listado de Jugadores</h1>
+        <p class="parrafo"> Estadisticas</p>
+        <p>
+          <a routerLink="juegos/sala-juegos" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th  scope="col">Fecha</th>
+          <th  scope="col">Jugador</th>
+          <th scope="col">Juego</th>
+          <th  scope="col">Puntaje / Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let juego of listado | sortBy:'createdAt':'desc'"> -->
+          <tr *ngFor="let juego of listado">
+          <td>{{juego.createdAt}} </td>
+          <td>{{juego.idUser}} </td>
+          <td>{{juego.game}} </td>
+          <td>{{juego.points}} -
+            <span *ngIf="juego.win">Gano </span>
+            <span *ngIf="!juego.win">Perdio</span>
+          </td>
+        </tr>
+    
+      </tbody>
+    </table>
+
+
+
+<!-- <button (click)="guardar()">Cargar</button>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Puntaje</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of collection.data">
+            <th>{{item.usuario}}</th>
+            <td>{{item.puntos}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.hora}}</td>
+          </tr>
+        </tbody>
+      </table> -->
+      
+
+  </main>
+
+<app-chat></app-chat>
+
+
+<app-footer></app-footer>

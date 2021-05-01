@@ -12,6 +12,8 @@ import { FooterModule } from '../footer/footer.module';
 import { ChatModule } from '../chat/chat.module';
 import { MiJuegoComponent } from './mi-juego/mi-juego.component';
 import { MemotestComponent } from './memotest/memotest.component';
+import { ListadoComponent } from './listado/listado.component';
+import { ListadoService } from 'src/app/servicios/listado.service';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { MemotestComponent } from './memotest/memotest.component';
     SalaJuegosComponent,
     TatetiComponent,
     MiJuegoComponent,
-    MemotestComponent
+    MemotestComponent,
+    ListadoComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,9 @@ import { MemotestComponent } from './memotest/memotest.component';
     NavbarMenuModule,
     FooterModule,
     ChatModule
+  ],
+  providers: [
+    ListadoService
   ]
 })
 export class JuegosModule { }

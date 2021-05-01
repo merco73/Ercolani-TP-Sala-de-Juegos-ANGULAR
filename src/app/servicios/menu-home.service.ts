@@ -14,22 +14,23 @@ export class MenuHomeService {
       link: "/juegos/sala-juegos"
     },
     {
-      img: "./assets/imagenes/listado.png",
+      img: "./assets/imagenes/jugadores.png",
       nombre: "Listados de resultados",
       descripcion: "Los listados de los resultados con ordenamiento y busqueda",
-      link: "/Listado"
+      link: "/juegos/listado"
     },
-    // {
-    //   img: "./assets/imagenes/Configuracion.png",
-    //   nombre: "Configuración",
-    //   descripcion: "Ajustes de la aplicacion y los métodos de autentificación",
-    //   link: "/Juegos"
-    // },
     {
-      img: "./assets/imagenes/jugadores.png",
-      nombre: "Jugadores",
-      descripcion: "Listado de jugadores",
+      
+      img: "./assets/imagenes/listado.png",
+      nombre: "Encuesta",
+      descripcion: "Encuesta para jugadores",
       link: "/Jugadores"
+    },
+    {
+      img: "./assets/imagenes/Configuracion.png",
+      nombre: "Quien soy?",
+      descripcion: "Descripcion del juego",
+      link: "/quien-soy"
     }
   ];
 

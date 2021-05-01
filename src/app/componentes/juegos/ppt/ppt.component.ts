@@ -1,5 +1,6 @@
 import { constructorParametersDownlevelTransform } from '@angular/compiler-cli';
 import { Component, OnInit } from '@angular/core';
+import { ListadoService } from 'src/app/servicios/listado.service';
 
 @Component({
   selector: 'app-ppt',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent implements OnInit {
+
+
+  constructor(public firebaseService: ListadoService) { }
+
+
 // 0 = piedra
 // 1 = papel
 // 2 = tijera
 
  imgMachine:string = '../../../../assets/imagenes/piedra.jpeg';
  imgUser:string = '../../../../assets/imagenes/piedra.jpeg';
+ contador:number = 0;
+ needWon:number = 3;
+ contadorCpu:number = 0;
 
 //  resultados
   resultado:string = 'Resultado...';
@@ -78,10 +87,13 @@ export class PptComponent implements OnInit {
       if(maquina == 1){
 
         this.resultado = 'Perdiste :(';
+        this.contadorCpu++;
 
       }else if(maquina == 2){
 
          this.resultado = 'Ganaste :)';
+         this.contador++;
+
 
       }
 
@@ -91,10 +103,12 @@ export class PptComponent implements OnInit {
       if(maquina == 0){
 
         this.resultado = 'Ganaste :)';
+        this.contador++;
 
       }else if(maquina == 2){
 
         this.resultado = 'Perdiste :(';
+        this.contadorCpu++;
 
       }
 
@@ -104,24 +118,45 @@ export class PptComponent implements OnInit {
       if(maquina == 0){
 
         this.resultado = 'Perdiste :(';
+        this.contadorCpu++;
 
       }else if(maquina == 1){
 
         this.resultado = 'Ganaste :)';
+        this.contador++;
 
       }
 
     }
 
   
+    if(this.contador == 3){
+      this.loadResult();
+      this.reiniciarJuego();
+    }
 
+    if(this.contadorCpu == 3){
+      this.loadResult();
+      this.reiniciarJuego();
+    }
+
+  }
+
+  reiniciarJuego(){
+    this.contador = 0;
+    this.contadorCpu = 0;
   }
 
 
 
+ loadResult() {
+  this.firebaseService.addResult('Piedra, Papel o Tijera', this.contador, (this.contador == this.needWon))
+    .then(result => {
+      console.log("insert result");
+    });
+}
 
 
-  constructor() { }
 
   ngOnInit(): void {
   }
