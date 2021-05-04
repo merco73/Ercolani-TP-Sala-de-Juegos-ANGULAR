@@ -161,6 +161,33 @@
 
 
 
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Juego</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of collection.data">
+            <th>{{item.user}}</th>
+            <th>{{item.nombre}}</th>
+            <td>{{item.apellido}}</td>
+            <td>{{item.edad}}</td>
+            <td>{{item.telefono}}</td>
+            <td>{{item.juego}}</td>
+            <td>{{item.sexo}}</td>
+            <td>{{item.opinion}}</td>
+          </tr>
+        </tbody>
+      </table>
+
 
   </main>
 

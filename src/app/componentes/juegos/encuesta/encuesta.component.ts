@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators }  from '@angular/forms';
+import { FormularioService } from 'src/app/servicios/formulario.service';
 
 @Component({
   selector: 'app-encuesta',
@@ -9,14 +10,38 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators }  fro
 export class EncuestaComponent implements OnInit {
 
 
+  collection = {count:60, data:[]};
 
   public forma: FormGroup;
 
-  public constructor(private fb: FormBuilder) {}
+  public constructor(private fb: FormBuilder,private fbForm :FormularioService) {}
 
   public nombreUser = localStorage.getItem('email');
 
   ngOnInit(): void {
+
+
+       this.fbForm.getUserGame().subscribe(resp=>{
+       this.collection.data = resp.map((e:any)=>{
+         return {
+           nombre:e.payload.doc.data().nombre,
+           apellido:e.payload.doc.data().apellido,
+           edad:e.payload.doc.data().edad,
+           telefono:e.payload.doc.data().telefono,
+           juego:e.payload.doc.data().juego,
+           sexo:e.payload.doc.data().sexo,
+           opinion:e.payload.doc.data().opinion,
+           user:e.payload.doc.data().user,
+
+         }
+       })
+     },
+       error=>{
+         console.error(error);
+       }
+     );
+
+
 
     // **************************** //
     // ******* MANERA 1 *********** //
@@ -50,6 +75,11 @@ export class EncuestaComponent implements OnInit {
 
   public aceptar(): void {
     console.log(this.forma.getRawValue());
+     this.fbForm.crearUserGame(this.forma.getRawValue()).then(resp=>{
+       console.log(resp);
+     }).catch(error=>{
+       console.error(error);
+     })
   }
 
   // CUSTOM VALIDATOR
@@ -61,5 +91,9 @@ export class EncuestaComponent implements OnInit {
       ? { containsSpaces: true }
       : null; 
   }
+
+
+
+
 
 }
