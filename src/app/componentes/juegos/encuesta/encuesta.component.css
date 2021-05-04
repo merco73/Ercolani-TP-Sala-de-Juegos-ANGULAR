@@ -1,0 +1,61 @@
+/* Jumbo generico */
+.jumbotron {
+    padding: 4rem 2rem;
+    margin-bottom: 0rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+
+        background-color: #000;
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../../assets/imagenes/mario.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+}
+
+h1{
+    color: #ffc107;
+}
+
+h2{
+    text-align: center;
+}
+
+.juegos{
+    margin-top: 1%; 
+    margin-bottom: 1%; 
+}
+
+.parrafo{
+    color: rgb(174, 174, 174);
+}   
+  
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+
+/* Form */
+
+.conta {
+    max-width: 600px;
+    padding: 60px;
+    -webkit-box-shadow: 1px 1px 31px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 31px -5px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 31px -5px rgba(0,0,0,0.75);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.formulario div[class^="col-md-"] {
+    height: 90px;
+}
+
+.invalid {
+    color: red;
+}
+
+
+textarea
+{
+  width:100%;
+}

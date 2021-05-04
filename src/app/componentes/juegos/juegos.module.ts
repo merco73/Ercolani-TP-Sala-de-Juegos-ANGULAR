@@ -14,6 +14,8 @@ import { MiJuegoComponent } from './mi-juego/mi-juego.component';
 import { MemotestComponent } from './memotest/memotest.component';
 import { ListadoComponent } from './listado/listado.component';
 import { ListadoService } from 'src/app/servicios/listado.service';
+import { EncuestaComponent } from './encuesta/encuesta.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { ListadoService } from 'src/app/servicios/listado.service';
     TatetiComponent,
     MiJuegoComponent,
     MemotestComponent,
-    ListadoComponent
+    ListadoComponent,
+    EncuestaComponent
   ],
   imports: [
     CommonModule,
     JuegosRoutingModule,
     NavbarMenuModule,
     FooterModule,
-    ChatModule
+    ChatModule,
+    ReactiveFormsModule
   ],
   providers: [
     ListadoService

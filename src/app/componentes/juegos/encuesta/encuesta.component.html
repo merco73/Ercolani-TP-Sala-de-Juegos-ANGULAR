@@ -1,0 +1,170 @@
+<app-navbar-menu></app-navbar-menu>
+
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Encuesta</h1>
+        <p class="parrafo"> Encuesta sobre la experencia de usuario</p>
+        <p>
+          <a routerLink="/home" class="btn btn-secondary my-2">« Volver a la Sala de Juegos</a>
+        </p>
+      </div>
+    </section>
+
+
+
+    <div class="container conta">   
+        <form [formGroup]="forma" (ngSubmit)="aceptar()">
+          <div class="row">
+            <div class="col-md-12 mb-5">
+              <h2>Jugador</h2>
+            </div>
+          </div>
+
+          <input type="text" class="form-control" id="user" formControlName="user"  type="hidden" [(ngModel)]="nombreUser">
+
+          <div class="row formulario">
+            <div class="col-md-6 mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombre">
+              <small class="invalid" 
+                *ngIf="forma.controls.nombre.errors?.required &&
+                forma.controls.nombre.touched">
+                * El nombre es requerido
+              </small>
+              <small class="invalid" 
+              *ngIf="forma.controls.nombre.errors?.containsSpaces &&
+              forma.controls.nombre.touched">
+              * El nombre no puede contener espacios
+            </small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" formControlName="apellido"> 
+              <small class="invalid"
+                *ngIf="forma.controls.apellido.errors?.required &&
+                forma.controls.apellido.touched">
+                * El apellido es requerido
+              </small>
+            </div>
+
+
+
+            <div class="col-md-6 mb-3">
+              <label for="dni" class="form-label">Edad</label>
+              <input type="number" class="form-control" id="edad" placeholder="Ingrese edad" formControlName="edad">
+              <small class="invalid"
+                *ngIf="forma.controls.edad.errors?.required &&
+                forma.controls.edad.touched">
+                * La edad es requerida
+              </small>
+              <small class="invalid"
+                *ngIf="forma.controls.edad.errors?.min || 
+                forma.controls.edad.errors?.max &&
+                forma.controls.edad.touched">
+                * La edad debe ser de 18 a 99 años
+              </small>
+            </div>
+
+
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Telefono</label>
+              <input type="number" class="form-control" id="telefono" placeholder="Ingrese Telefono" formControlName="telefono">
+              <small class="invalid" 
+                *ngIf="forma.controls.telefono.errors?.required &&
+                forma.controls.telefono.touched">
+                * El telefono es requerido
+              </small>
+              <small class="invalid" 
+                *ngIf="forma.controls.telefono.errors?.max &&
+                forma.controls.telefono.touched">
+                * El telefono debe tener 10 numeros o menos
+            </small>
+            </div>
+
+
+
+            <div class="col-md-6 mb-3">
+              <label for="juego" class="form-label">¿Juego favorito? </label><br>
+              <select class="form-select" id="juego" formControlName="juego">
+                <option value="">Seleccionar uno</option>
+                <option value="TaTeTi">TaTeTi</option>
+                <option value="Piedra Papel Tijera">Piedra Papel Tijera</option>
+                <option value="Atrapa Raton">Atrapa Raton</option>
+                <option value="Memo test">Memo test</option>
+              </select><br>
+              <small class="invalid"
+                *ngIf="forma.controls.juego.errors?.required &&
+                forma.controls.juego.touched">
+               * Seleccione una opcion
+              </small>
+            </div>
+
+            
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Sexo</label><br>
+                <label>
+                  <input type="radio" value="Male" formControlName="sexo">
+                    <span> Masculino</span>
+                </label><br>
+                <label>
+                  <input type="radio" value="Female" formControlName="sexo">
+                    <span> Femenino</span>
+                </label> <br>
+                <small class="invalid"
+                *ngIf="forma.controls.sexo.errors?.required && forma.controls.sexo.touched">
+                * Debe seleccionar su sexo
+              </small>                  
+            </div>
+
+
+
+            <div class="col-md-12 mb-3">
+              <br>
+              <label class="form-label">¿Cual es tu opinion sobre la sala de juegos?</label><br>
+              <textarea formControlName="opinion" rows="3" ></textarea> 
+              <small class="invalid"
+              *ngIf="forma.controls.opinion.errors?.required &&
+              forma.controls.opinion.touched">
+              * La opinion es requerida
+            </small>            
+            </div>
+
+
+          </div>
+        <br><br><br>
+          <div class="row">
+            <div class="col-md-12 mb-5">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="terminos" formControlName="terminos">
+                <label for="recordar" class="form-check-label" for="terminos">
+                  Acepto términos y condiciones.
+                </label>
+              </div>
+            </div>
+            
+            <div class="col-md-12 d-grid gap-2">
+              <button type="submit" 
+              class="btn btn-primary btn-block" 
+              [disabled]="forma.invalid || !forma.controls.terminos.value">
+              Aceptar
+            </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+  </main>
+
+<app-chat></app-chat>
+
+
+<app-footer></app-footer>

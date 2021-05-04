@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EncuestaComponent } from './encuesta/encuesta.component';
 import { ListadoComponent } from './listado/listado.component';
 import { MemotestComponent } from './memotest/memotest.component';
 import { MiJuegoComponent } from './mi-juego/mi-juego.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
      {path:'mi-juego', component: MiJuegoComponent},
      {path:'memotest', component: MemotestComponent},
      {path:'listado', component: ListadoComponent},
+     {path:'encuesta', component: EncuestaComponent},
      {path:'**', redirectTo:'sala-juegos'}
     ]
    }

@@ -24,7 +24,7 @@ export class MenuHomeService {
       img: "./assets/imagenes/listado.png",
       nombre: "Encuesta",
       descripcion: "Encuesta para jugadores",
-      link: "/Jugadores"
+      link: "/juegos/encuesta"
     },
     {
       img: "./assets/imagenes/Configuracion.png",
