@@ -179,7 +179,7 @@ export class MemotestComponent implements OnInit {
 
     setTimeout(() => {
       this.inicio();
-     }, 10000);
+     }, 4000);
 
   }
 

@@ -8,6 +8,9 @@ import { ListadoService } from 'src/app/servicios/listado.service';
 })
 export class TatetiComponent implements OnInit {
 
+  resultado:string = "...";
+  cartelResultado:boolean = false;
+
 
   PLAYER_COMPUTER = { name: 'CPU', symbol: 'O' };
   PLAYER_HUMAN = { name: 'Usuario', symbol: 'X' };
@@ -143,17 +146,27 @@ export class TatetiComponent implements OnInit {
 
 
     if(this.scoreHuman == this.needWon){
+      this.cartelResultado = true;
+      this.resultado = "Ganaste!";
       this.loadResult();
       this.newGame();
-      this.scoreHuman = 0;
-      this.scoreComputer = 0;
+      setTimeout(() => {
+        this.scoreHuman = 0;
+        this.scoreComputer = 0;
+        this.cartelResultado = false;
+       }, 4000);
     }
 
     if(this.scoreComputer == this.needWon){
+      this.cartelResultado = true;
+      this.resultado = "Perdiste!";
       this.loadResult();
       this.newGame();
-      this.scoreHuman = 0;
-      this.scoreComputer = 0;
+      setTimeout(() => {
+        this.cartelResultado = false;
+        this.scoreHuman = 0;
+        this.scoreComputer = 0;
+       }, 4000);
     }
 
   }

@@ -15,6 +15,9 @@
     </section>
 
     <div class="contenedor">
+      <div *ngIf='cartelResultado' class="resultado">
+        <span><b>{{resultado}}</b></span>
+      </div>
       <h3 *ngIf="!gameOver">Turno: {{ currentPlayer.name }}</h3>
       <h3 *ngIf="gameOver && lastWinner == PLAYER_HUMAN">Ganaste! :)</h3>
       <h3 *ngIf="gameOver && lastWinner == PLAYER_COMPUTER">Perdiste! :(</h3>
